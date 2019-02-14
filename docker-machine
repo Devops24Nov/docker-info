@@ -1,0 +1,11 @@
+
+https://www.kevinkuszyk.com/2016/11/28/connect-your-docker-client-to-a-remote-docker-host/
+
+
+docker-machine create --driver generic --generic-ip-address={ip-address} --generic-ssh-key "%localappdata%/lxss/home/{bash-username}/.ssh/id_rsa" --generic-ssh-user={remote-ssh-username} {remote-docker-host}  
+
+docker-machine env {remote-docker-host}  
+
+@FOR /f "tokens=*" %i IN ('docker-machine env remote-docker-host') DO @%i
+
+docker-machine ls  
