@@ -1,6 +1,12 @@
 
 https://www.kevinkuszyk.com/2016/11/28/connect-your-docker-client-to-a-remote-docker-host/
 
+install:
+
+ base=https://github.com/docker/machine/releases/download/v0.16.0 &&
+  curl -L $base/docker-machine-$(uname -s)-$(uname -m) >/tmp/docker-machine &&
+  sudo install /tmp/docker-machine /usr/local/bin/docker-machine
+  
 
 docker-machine create --driver generic --generic-ip-address={ip-address} --generic-ssh-key "%localappdata%/lxss/home/{bash-username}/.ssh/id_rsa" --generic-ssh-user={remote-ssh-username} {remote-docker-host}  
 
