@@ -12,6 +12,6 @@ docker-machine create --driver generic --generic-ip-address={ip-address} --gener
 
 docker-machine env {remote-docker-host}  
 
-@FOR /f "tokens=*" %i IN ('docker-machine env remote-docker-host') DO @%i
-
 docker-machine ls  
+
+ip-address or remote-docker-host --> docker host ip or dnsname
